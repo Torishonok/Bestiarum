@@ -5,6 +5,8 @@
 package mephi.b22901.torishonok.bestiarum;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -152,6 +154,44 @@ public class Creature {
     @Override
     public String toString() {
         return name;
+    }
+    public Map<String, Object> toMap() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("id", id);
+        map.put("name", name);
+        map.put("description", description);
+        map.put("dangerLevel", dangerLevel);
+        map.put("habitat", habitat);
+        map.put("activity", activity);
+        map.put("firstMentioned", firstMention);
+        map.put("immunities", immunities);
+        map.put("vulnerabilities", vulnerabilities);
+        map.put("height", height);
+        map.put("weight", weight);
+        map.put("poisonRecipe", poisonRecipe);
+        map.put("time", time);
+        map.put("efficiency", efficiency);
+        return map;
+    }
+
+    
+    public static Creature fromMap(Map<String, Object> map) {
+        Creature creature = new Creature();
+        creature.setId((Integer) map.get("id"));
+        creature.setName((String) map.get("name"));
+        creature.setDescription((String) map.get("description"));
+        creature.setDangerLevel((Integer) map.get("dangerLevel"));
+        creature.setHabitat((String) map.get("habitat"));
+        creature.setActivity((String) map.get("activity"));
+        creature.setFirstMentioned((String) map.get("firstMentioned"));
+        creature.setImmunities((String) map.get("immunities"));
+        creature.setVulnerabilities((String) map.get("vulnerabilities"));
+        creature.setHeight((String) map.get("height"));
+        creature.setWeight((String) map.get("weight"));
+        creature.setPoisonRecipe((String) map.get("poisonRecipe"));
+        creature.setTime((Integer) map.get("time"));
+        creature.setEfficiency((String) map.get("efficiency"));
+        return creature;
     }
 
 }

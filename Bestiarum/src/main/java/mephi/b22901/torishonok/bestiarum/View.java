@@ -249,50 +249,58 @@ public class View extends JFrame {
         Creature creature = (Creature) node.getUserObject();
 
         JFrame frame = new JFrame("Изменение данных о существе");
-        frame.setSize(600, 300);
+    frame.setSize(600, 300);
 
-        JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(2, 0));
+    JPanel panel = new JPanel();
+    panel.setLayout(new GridLayout(2, 0));
 
-        JPanel panel1 = new JPanel();
-        Integer[] dangerOptions = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        JComboBox danger = new JComboBox(dangerOptions);
-        danger.setSelectedIndex(creature.getDangerLevel());
-        JLabel dangerLabel = new JLabel("Новое значение уровня опасности: ");
-        panel1.add(dangerLabel);
-        panel1.add(danger);
+    JPanel panel1 = new JPanel();
+    Integer[] dangerOptions = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    JComboBox danger = new JComboBox(dangerOptions);
+    danger.setSelectedIndex(creature.getDangerLevel());
+    JLabel dangerLabel = new JLabel("Новое значение уровня опасности: ");
+    panel1.add(dangerLabel);
+    panel1.add(danger);
 
-        JLabel vulnerabilityLabel = new JLabel("Новая информация об уязвимостях: ");
-        JTextArea vulnerabilityArea = new JTextArea(creature.getVulnerabilities(), 3, 15);
-        JScrollPane scrollPane = new JScrollPane(vulnerabilityArea);
-        JPanel panel2 = new JPanel();
-        panel2.add(vulnerabilityLabel);
-        panel2.add(scrollPane);
+    JLabel vulnerabilityLabel = new JLabel("Новая информация об уязвимостях: ");
+    JTextArea vulnerabilityArea = new JTextArea(creature.getVulnerabilities(), 3, 15);
+    JScrollPane scrollPane = new JScrollPane(vulnerabilityArea);
+    JPanel panel2 = new JPanel();
+    panel2.add(vulnerabilityLabel);
+    panel2.add(scrollPane);
 
-        panel.add(panel1);
-        panel.add(panel2);
-        panel.setBorder(BorderFactory.createEmptyBorder(10, 20, 5, 20));
+    panel.add(panel1);
+    panel.add(panel2);
+    panel.setBorder(BorderFactory.createEmptyBorder(10, 20, 5, 20));
 
-        JPanel btnPanel = new JPanel();
-        JButton okBtn = new JButton("Сохранить");
-        okBtn.addActionListener((e) -> {
-            int selectedDangerLevel = (int) danger.getSelectedItem();
-            String newVulnerabilities = vulnerabilityArea.getText();
-            creature.setDangerLevel(selectedDangerLevel);
-            creature.setVulnerabilities(newVulnerabilities);
-            node.setUserObject(creature);
-            ((DefaultTreeModel) creatureTree.getModel()).nodeChanged(node);
-            changeInfo.saveToStorage(creature.getId(), newVulnerabilities, selectedDangerLevel, creature.getRecievedFrom());
-            frame.dispose();
-        });
-        btnPanel.add(okBtn);
-        btnPanel.setBorder(BorderFactory.createEmptyBorder(5, 20, 10, 20));
+    JPanel btnPanel = new JPanel();
+    JButton okBtn = new JButton("Сохранить");
+    okBtn.addActionListener((e) -> {
+        int selectedDangerLevel = (int) danger.getSelectedItem();
+        String newVulnerabilities = vulnerabilityArea.getText();
 
-        frame.add(panel, BorderLayout.CENTER);
-        frame.add(btnPanel, BorderLayout.SOUTH);
-        frame.setVisible(true);
-        frame.setLocationRelativeTo(null);
-    }
+        
+        if (newVulnerabilities == null) {
+            JOptionPane.showMessageDialog(frame, "Уязвимости не могут быть пустыми.", "Ошибка", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        creature.setDangerLevel(selectedDangerLevel);
+        creature.setVulnerabilities(newVulnerabilities);
+        node.setUserObject(creature);
+        ((DefaultTreeModel) creatureTree.getModel()).nodeChanged(node);
+
+        changeInfo.saveToStorage(creature.getId(), newVulnerabilities, selectedDangerLevel, lastImportedFormat);
+        frame.dispose();
+    });
+    btnPanel.add(okBtn);
+    btnPanel.setBorder(BorderFactory.createEmptyBorder(5, 20, 10, 20));
+
+    frame.add(panel, BorderLayout.CENTER);
+    frame.add(btnPanel, BorderLayout.SOUTH);
+    frame.setVisible(true);
+    frame.setLocationRelativeTo(null);
+}
     private boolean isFileEmpty(String path) {
     File file = new File(path);
     return file.exists() && file.length() == 0;

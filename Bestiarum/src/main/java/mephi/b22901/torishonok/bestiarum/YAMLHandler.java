@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -29,39 +30,44 @@ public class YAMLHandler extends BaseHandler {
 
     @Override
     protected List<Creature> readData(String path) {
-        List<Creature> bestiarium = new ArrayList<>();
-        InputStream inputStream;
-        try {
-            inputStream = new FileInputStream(new File(path));
-            Yaml yaml = new Yaml();
-            List<Map<String, Object>> data = yaml.load(inputStream);
-            for (Map<String, Object> creatureData : data) {
-                Creature creature = new Creature();
-                creature.setId((Integer) creatureData.get("id"));
-                creature.setName((String) creatureData.get("name"));
-                creature.setDescription((String) creatureData.get("description"));
-                creature.setDangerLevel((Integer) creatureData.get("dangerLevel"));
-                creature.setHabitat((String) creatureData.get("habitat"));
-                creature.setActivity((String) creatureData.get("activity"));
-                creature.setFirstMentioned((String) creatureData.get("firstMentioned"));
-                creature.setImmunities((String) creatureData.get("immunities"));
-                creature.setVulnerabilities((String) creatureData.get("vulnerabilities"));
-                creature.setHeight((String) creatureData.get("height"));
-                creature.setWeight((String) creatureData.get("weight"));
-                creature.setPoisonRecipe((String) creatureData.get("poisonRecipe"));
-                creature.setTime((Integer) creatureData.get("time"));
-                creature.setEfficiency((String) creatureData.get("efficiency"));
-                creature.setRecievedFrom(extension);
-                bestiarium.add(creature);
-            }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(YAMLHandler.class.getName()).log(Level.SEVERE, null, ex);
+    List<Creature> bestiarium = new ArrayList<>();
+    try (InputStream inputStream = new FileInputStream(new File(path))) {
+        Yaml yaml = new Yaml();
+        List<Map<String, Object>> data = yaml.load(inputStream);
+        for (Map<String, Object> creatureData : data) {
+            Creature creature = Creature.fromMap(creatureData);
+            bestiarium.add(creature);
         }
-        return bestiarium;
+    } catch (FileNotFoundException ex) {
+        Logger.getLogger(YAMLHandler.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (IOException ex) {
+        Logger.getLogger(YAMLHandler.class.getName()).log(Level.SEVERE, null, ex);
     }
+    return bestiarium;
+}
 
-    @Override
-    protected void writeData(String path) {
-        throw new UnsupportedOperationException("Not supported yet."); 
+@Override
+protected void writeData(String path) {
+    List<Creature> creatures = getCreatures();
+    Yaml yaml = new Yaml();
+    try (FileWriter writer = new FileWriter(path)) {
+        List<Map<String, Object>> data = new ArrayList<>();
+        for (Creature creature : creatures) {
+            data.add(creature.toMap());
+        }
+        yaml.dump(data, writer);
+    } catch (IOException ex) {
+        Logger.getLogger(YAMLHandler.class.getName()).log(Level.SEVERE, null, ex);
+    }}
+
+    
+    private List<Creature> getCreatures() {
+         
+    List<Creature> creatures = Depository.getYamlStorage();
+    if (creatures == null) {
+      
+        return new ArrayList<>();
+    }
+    return creatures;
     }
 }

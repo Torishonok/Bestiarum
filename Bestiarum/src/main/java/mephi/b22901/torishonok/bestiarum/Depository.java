@@ -66,22 +66,45 @@ public class Depository {
         }
         return check;
     }
+    
+    
 
     public static void editData(int creatureId, String vulnerabilities, int dangerLvl, String ex) {
+        List<Creature> storage = null;
         switch (ex) {
-            case ".xml":
-                xmlStorage.get(creatureId - 1).setDangerLevel(dangerLvl);
-                xmlStorage.get(creatureId-1).setVulnerabilities(vulnerabilities);
-                break;
-            case ".json":
-                jsonStorage.get(creatureId - 1).setDangerLevel(dangerLvl);
-                jsonStorage.get(creatureId-1).setVulnerabilities(vulnerabilities);
-                break;
-            case ".yaml":
-                yamlStorage.get(creatureId - 1).setDangerLevel(dangerLvl);
-                yamlStorage.get(creatureId-1).setVulnerabilities(vulnerabilities);
-                break;
-        }
+        case ".xml":
+            storage = xmlStorage;
+            break;
+        case ".json":
+            storage = jsonStorage;
+            break;
+        case ".yaml":
+            storage = yamlStorage;
+            break;
+        default:
+            throw new IllegalArgumentException("Unsupported storage type: " + ex);
+    }
+    
+        if (storage == null) {
+        throw new IllegalStateException("Storage for " + ex + " is not initialized.");
+    }
+         // Проверяем, что creatureId корректен
+    if (creatureId < 1 || creatureId > storage.size()) {
+        throw new IndexOutOfBoundsException("Creature ID is out of bounds: " + creatureId);
+    }
+
+    // Проверяем, что vulnerabilities не null
+    if (vulnerabilities == null) {
+        throw new IllegalArgumentException("Vulnerabilities cannot be null.");
+    }
+
+    // Обновляем данные существа
+    Creature creature = storage.get(creatureId - 1);
+     if (creature == null) {
+        throw new IllegalStateException("Creature with ID " + creatureId + " is null.");
+    }
+    creature.setDangerLevel(dangerLvl);
+    creature.setVulnerabilities(vulnerabilities);
     }
 
 }
