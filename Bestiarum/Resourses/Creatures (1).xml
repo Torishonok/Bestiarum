@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<creatures>
+<creature>
+  <id>1</id>
+  <name>Леший</name>
+  <description>Гибрид человека и лесного духа, охраняющий древние рощи</description>
+  <dangerLevel>7</dangerLevel>
+  <habitat>чащи Брокилона и Эдингеля</habitat>
+  <activity>ночью</activity>
+  <firstMentioned>1234-06-21</firstMentioned>
+  <immunities>оглушение, яды, магия</immunities>
+  <vulnerabilities>неизвестно</vulnerabilities>
+  <height>3 м</height>
+  <weight>300 кг</weight>
+  <poisonRecipe>корень мандрагоры (3), пепел драконида (1), эссенция полыни</poisonRecipe>
+  <time>60</time>
+  <efficiency>умеренная</efficiency>
+</creature>
+<creature>
+<id>2</id>
+<name>Полуденница</name>
+<description>Призрак, терроризирующий поля во время жатвы</description>
+<dangerLevel>5</dangerLevel>
+<habitat>поля Редании и в амбары Туссента</habitat>
+<activity>днём</activity>
+<firstMentioned>1198-07-15</firstMentioned>
+<immunities>кровотечение</immunities>
+<vulnerabilities>световая магия</vulnerabilities>
+<height>неосязаем</height>
+<weight>мнения очевидцев расходятся</weight>
+<poisonRecipe>лепестки лунного цветка (2), серебряная нить (1), экстракт чеснока</poisonRecipe>
+<time>30</time>
+<efficiency>высокая</efficiency>
+</creature>
+<creature>
+<id>3</id>
+<name>Катакан</name>
+<description>Крылатый демон с хвостом скорпиона</description>
+<dangerLevel>9</dangerLevel>
+<habitat>горные пещеры Туссента</habitat>
+<activity>в сумерки</activity>
+<firstMentioned>1150-04-12</firstMentioned>
+<immunities>огонь, яды</immunities>
+<vulnerabilities>неизвестно</vulnerabilities>
+<height>2 м</height>
+<weight>200 кг</weight>
+<poisonRecipe>жало мантикоры (4), нефритовая пыль (2), спирт Альберихта</poisonRecipe>
+<time>90</time>
+<efficiency>критическая.</efficiency>
+</creature>
+<creature>
+<id>4</id>
+<name>Кикимора</name>
+<description>Болотная нежить из гниющих останков</description>
+<dangerLevel>6</dangerLevel>
+<habitat>топи Вендена</habitat>
+<activity>ночью</activity>
+<firstMentioned>1221-09-03</firstMentioned>
+<immunities>удушье</immunities>
+<vulnerabilities>земляная магия</vulnerabilities>
+<height>1 м</height>
+<weight>15 кг</weight>
+<poisonRecipe>грибы-поганки (5), глаз василиска (1), роса папоротника (3)</poisonRecipe>
+<time>45</time>
+<efficiency>средняя</efficiency>
+</creature>
+<creature>
+<id>5</id>
+<name>Элементаль льда</name>
+<description>Дух вечной зимы</description>
+<dangerLevel>10</dangerLevel>
+<habitat>ледники Ковира</habitat>
+<activity>всегда</activity>
+<firstMentioned>1105-12-01</firstMentioned>
+<immunities>заморозка, дробление</immunities>
+<vulnerabilities>неизвестно</vulnerabilities>
+<height>5 м</height>
+<weight>неизмерим</weight>
+<poisonRecipe>сердце огненного элементаля (1), сера (3), расплавленное железо</poisonRecipe>
+<time>120</time>
+<efficiency>переменная</efficiency>
+</creature>
+<creature>
+<id>6</id>
+<name>Громобой</name>
+<description>Полуволк-полудракон с кожей из грозовых туч</description>
+<dangerLevel>8</dangerLevel>
+<habitat>вершины гор Ардарна и Гридана</habitat>
+<activity>в бурю</activity>
+<firstMentioned>1299-03-11</firstMentioned>
+<immunities>электричество, магия воды</immunities>
+<vulnerabilities>магия земли</vulnerabilities>
+<height>2,5 м</height>
+<weight>350 кг</weight>
+<poisonRecipe>клыки адской гончей (2), пыльца молнии (5), эфир хаоса</poisonRecipe>
+<time>75</time>
+<efficiency>высокая</efficiency>
+</creature>
+<creature>
+<id>7</id>
+<name>Лунный светляк</name>
+<description>Эфирное существо, которое охраняет магические ритуалы</description>
+<dangerLevel>3</dangerLevel>
+<habitat>долины Альбосмара</habitat>
+<activity>в полнолуние</activity>
+<firstMentioned>1320-09-30</firstMentioned>
+<immunities>темнота, физические атаки</immunities>
+<vulnerabilities>музыка</vulnerabilities>
+<height>не определен</height>
+<weight>не определен</weight>
+<poisonRecipe>пыльца светящихся лилий (3), капли утренней росы (4), мелодия древнего флейтиста</poisonRecipe>
+<time>45</time>
+<efficiency>умеренная</efficiency>
+</creature>
+<creature>
+<id>8</id>
+<name>Исполин-толкун</name>
+<description>Гигант из скал и глины, охраняющий древние святилища</description>
+<dangerLevel>9</dangerLevel>
+<habitat>развалины Остана и Торлейна</habitat>
+<activity>днём</activity>
+<firstMentioned>1285-02-14</firstMentioned>
+<immunities>физические атаки</immunities>
+<vulnerabilities>вода</vulnerabilities>
+<height>6 м</height>
+<weight>800 кг</weight>
+<poisonRecipe>кристаллы неразрушимости (6), кровь горного тролля (1), бриз долинного ветра</poisonRecipe>
+<time>150</time>
+<efficiency>критическая</efficiency>
+</creature>
+<creature>
+<id>9</id>
+<name>Огненная саламандра</name>
+<description>Ящероподобное существо, жизнью обязана лаве</description>
+<dangerLevel>5</dangerLevel>
+<habitat>вулканы Акварата</habitat>
+<activity>вблизи вулканов</activity>
+<firstMentioned>1176-11-23</firstMentioned>
+<immunities>огонь</immunities>
+<vulnerabilities>температурные перепады</vulnerabilities>
+<height>1,5 м</height>
+<weight>50 кг</weight>
+<poisonRecipe>чешуя термоядра (3), пыль вулканического пепла (3), тоска лавового духа</poisonRecipe>
+<time>60</time>
+<efficiency>высокая</efficiency>
+</creature>
+<creature>
+<id>10</id>
+<name>Песочный скорпион</name>
+<description>Дюны пустыни ожившие в ночи</description>
+<dangerLevel>4</dangerLevel>
+<habitat>пески Секумара и Фаэль-Абара</habitat>
+<activity>ночью</activity>
+<firstMentioned>1215-08-18</firstMentioned>
+<immunities>иссушение, удары воздуха</immunities>
+<vulnerabilities>вода</vulnerabilities>
+<height>0,5 м</height>
+<weight>15 кг</weight>
+<poisonRecipe>саблезубые травы (2), кровь пустынной гадюки (1), стакан бури</poisonRecipe>
+<time>35</time>
+<efficiency>средняя</efficiency>
+</creature>
+</creatures>
