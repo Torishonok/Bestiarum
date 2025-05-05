@@ -1,0 +1,52 @@
+- {efficiency: умеренная, habitat: чащи Брокилона и Эдингеля, activity: ночью, immunities: 'оглушение,
+    яды, магия', dangerLevel: 7, description: 'Гибрид человека и лесного духа, охраняющий
+    древние рощи', weight: 300 кг, poisonRecipe: 'корень мандрагоры (3), пепел драконида
+    (1), эссенция полыни', name: Леший, vulnerabilities: неизвестно, id: 1, firstMentioned: '1234-06-21',
+  time: 60, height: 3 м}
+- {efficiency: высокая, habitat: поля Редании и в амбары Туссента, activity: днём,
+  immunities: кровотечение, dangerLevel: 5, description: 'Призрак, терроризирующий
+    поля во время жатвы', weight: мнения очевидцев расходятся, poisonRecipe: 'лепестки
+    лунного цветка (2), серебряная нить (1), экстракт чеснока', name: Полуденница,
+  vulnerabilities: световая магия, id: 2, firstMentioned: '1198-07-15', time: 30,
+  height: неосязаем}
+- {efficiency: критическая, habitat: горные пещеры Туссента, activity: в сумерки,
+  immunities: 'огонь, яды', dangerLevel: 9, description: Крылатый демон с хвостом
+    скорпиона, weight: 200 кг, poisonRecipe: 'жало мантикоры (4), нефритовая пыль
+    (2), спирт Альберихта', name: Катакан, vulnerabilities: неизвестно, id: 3, firstMentioned: '1150-04-12',
+  time: 90, height: 2 м}
+- {efficiency: средняя, habitat: топи Вендена, activity: ночью, immunities: удушье,
+  dangerLevel: 6, description: Болотная нежить из гниющих останков, weight: 15 кг,
+  poisonRecipe: 'грибы-поганки (5), глаз василиска (1), роса папоротника (3)', name: Кикимора,
+  vulnerabilities: земляная магия, id: 4, firstMentioned: '1221-09-03', time: 45,
+  height: 1 м}
+- {efficiency: переменная, habitat: ледники Ковира, activity: всегда, immunities: 'заморозка,
+    дробление', dangerLevel: 10, description: Дух вечной зимы, weight: неизмерим,
+  poisonRecipe: 'сердце огненного элементаля (1), сера (3), расплавленное железо',
+  name: Элементаль льда, vulnerabilities: неизвестно, id: 5, firstMentioned: '1105-12-01',
+  time: 120, height: 5 м}
+- {efficiency: стабильная, habitat: замёрзшие вершины Хааргита и Фриллана, activity: в
+    метель, immunities: 'мороз, иллюзии', dangerLevel: 7, description: Дух арктических
+    ветров с ледяными когтями и глазами-бурями, weight: 200 кг, poisonRecipe: 'осколки
+    ледяного клена (3), дыхание северного волка (2), пелена забвения', name: Морозный
+    страж, vulnerabilities: огонь, id: 6, firstMentioned: '1302-01-19', time: 65,
+  height: '2,1 м'}
+- {efficiency: умеренная, habitat: туманные луга Селонды, activity: на закате, immunities: 'тени,
+    страх', dangerLevel: 6, description: 'Полупризрачный конь, несущий тьму во все
+    уголки мира', weight: не определен, poisonRecipe: 'темная шерсть тенегрива (4),
+    лунный прах (2), капля рассвета', name: Тенегрив, vulnerabilities: 'свет, огненные
+    заклинания', id: 7, firstMentioned: '1354-06-12', time: 50, height: '1,7 м'}
+- {efficiency: высокая, habitat: глубины леса Органира, activity: в полдень, immunities: 'колющие
+    атаки, яд', dangerLevel: 5, description: 'Древесное существо, покрытое острыми
+    шипами и броней из коры', weight: 250 кг, poisonRecipe: 'смола древокола (1),
+    сок дикого буккара (2), корень плакучего тиса', name: Шипастый древокол, vulnerabilities: 'огонь,
+    метель', id: 8, firstMentioned: '1279-07-25', time: 78, height: 4 м}
+- {efficiency: слабая, habitat: подземные ходы Лавегона, activity: на рассвете, immunities: звуковые
+    атаки, dangerLevel: 9, description: Землекоп с панцирем из меди и сверкающими
+    глазами, weight: 8 кг, poisonRecipe: 'медная стружка (5), земляной гриб (2), слеза
+    старой шахты', name: Медный крот, vulnerabilities: 'вода, ртуть', id: 9, firstMentioned: '1203-04-08',
+  time: 22, height: '0,4 м'}
+- {efficiency: средняя, habitat: скалы Рогатых Ущелий, activity: на рассвете, immunities: 'яд,
+    каменные стрелы', dangerLevel: 7, description: Рептилия с ядовитыми перьями и
+    каменным взглядом, weight: 40 кг, poisonRecipe: 'перо василиска (3), слюна грифона
+    (2), тень пещерной змеи', name: Крылатый василиск, vulnerabilities: отражающий
+    свет, id: 10, firstMentioned: '1190-10-15', time: 56, height: '1,2 м'}

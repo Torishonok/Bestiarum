@@ -63,7 +63,7 @@ public class View extends JFrame {
     public View(ChangeInfo changeInfo) throws URISyntaxException {
 
         this.changeInfo = changeInfo;
-        this.dir = new File("C:\\Users\\vikus\\OneDrive\\Документы\\GitHub\\Bestiarum\\Bestiarum\\Resourses").getAbsolutePath();
+        this.dir = new File(Bestiarum.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getParent();
 
         JFrame frame = new JFrame("Bestiarum");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
